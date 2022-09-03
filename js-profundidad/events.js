@@ -1,6 +1,7 @@
 'use strict'
 /**
- * events =>
+ * events => events => El evento (evento) es el corazón de la aplicación JavaScript para interactuar para hacer que la página web se mueva. Cuando nosotros y la página web en el navegador.
+ * Al usar JavaScript, puede monitorear la aparición de eventos específicos y estipular que algunos eventos respondan a estos eventos.
  */
 
 var boton = document.querySelector('#boton')
