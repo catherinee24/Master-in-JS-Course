@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio de desarrollo web</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="01.js"></script>
+</head>
+
+<body>
+    <!--
+        1️⃣ Formulario con : nombre, apellidos, edad
+        2️⃣ Boton de enviar el formulario => evento submit
+        3️⃣ Mostrar datos por pantalla
+        4️⃣ Tener un boton que al darle click nos muestra los datos actuales
+        5️⃣ Validacion del formulario 
+    -->
+    <h1>Ejercicios del DOM, Eventos y Funciones 🦄</h1>
+    <div class="box">
+        <br>
+        <!-- Formulario con nombre, apellidos y edad-->
+        <!-- 🧨 Nota: Teniamos un error en el servidor, nuestra solucion fue:
+            1️⃣ Agregarle el # al action del form
+            2️⃣ Escirbir onsubmit = "return false;"
+            ⚡ Solucionado el problema!
+        -->
+
+        <!-- Creando el formulario -->
+        <form action="#" method="POST" id="formulario" onsubmit="return false;">
+            <!-- Nombre -->
+            <label for="nombre"><strong>Nombre: </strong></label></br>
+            <input type="text" name="nombre" id="nombre" /></br>
+            <span id="error_name"></span>
+            </br>
+
+            <!-- Apellido -->
+            <label for="apellidos"><strong>Apellido: </strong></label> </br>
+            <input type="text" name="apellido" id="apellido" /></br>
+            <span id="error_apellido"></span>
+            </br>
+
+
+            <!-- Edad -->
+            <label for="edad"><strong>Edad: </strong></label></br>
+            <input type="number" name="edad" id="edad" /></br>
+            <span id="error_edad"></span>
+            </br>
+
+
+            <!-- El evento submit -->
+            </br>
+            <input type="submit" value="Enviar" id="submit" />
+        </form>
+    </div>
+
+    <!-- -->
+    <div class="box dashed">
+        <h3 class="info">Info del usuario 👀</h3>
+        </br>
+    </div>
+
+
+</body>
+
+</html>
