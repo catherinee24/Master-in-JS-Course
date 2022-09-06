@@ -56,6 +56,9 @@ window.addEventListener('load', () => {
         for (let index in datosUsuarios) {
             let parrafo = document.createElement('p')
             parrafo.append(datosUsuarios[index])
+            parrafo.style.fontSize = '20px'
+            parrafo.style.fontFamily = 'arial'
+            parrafo.style.margin = '30px'
             box_dashed.append(parrafo)
         }
     })
