@@ -26,9 +26,13 @@ window.addEventListener('load', () => {
     // Seleccionamos la id del html del boton
     var boton = document.querySelector('#boton')
     // addEventListener() es mejor practica
+
     // click event
     boton.addEventListener('click', () => {
         cambiarColor()
+        // (this) para llamar al objeto boton
+        console.log(this)
+        this.boton.style.border = '5px solid black'
     })
 
     // Mouse over event 🖱️
