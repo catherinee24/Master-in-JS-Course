@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
     // esto es una promesa con lo cual utilizamos el metodo them() para recoger datos
 
     // esto es para convertir un obj que nos llegan en json directamente
+    // promesas de encadenamiento
     getUsers()
         .then((data) => data.json()) // captura los datos y convertirlos a json
         .then((users) => {
@@ -20,12 +21,21 @@ window.addEventListener('load', () => {
             console.log(usuarios)
             usersList(users.data)
 
+            return getInfo()
+        })
+        .then((data) => {
+            console.log(data)
             return getJanet()
         })
         .then((data) => data.json())
         .then((janet) => {
             userJanet(janet.data)
         })
+        .catch(error =>{
+           console.log(error)
+        })
+
+    // funcion para obtener la API de lo que queramos mostrar en nuestro frontend
 
     function getUsers() {
         return fetch('https://reqres.in/api/users')
@@ -33,6 +43,28 @@ window.addEventListener('load', () => {
     function getJanet() {
         return fetch('https://reqres.in/api/users/2')
     }
+
+    // creando una promesa desde cero
+    function getInfo() {
+        let teacher = {
+            name: 'Patrick',
+            lastName: 'Collins',
+            web: 'https://Patrick.com',
+        }
+        return new Promise((resolve, reject) => {
+            let teacher_string = ''
+
+            setTimeout(() => {
+                teacher_string = JSON.stringify(teacher)
+
+                if (typeof teacher_string != 'string' || teacher_string == '')
+                    return reject('error❌')
+                return resolve(teacher_string)
+            }, 3000)
+        })
+    }
+
+    // funciones para obtener los datos que queramos de la API
 
     function usersList(usuarios) {
         usuarios.map((user, i) => {
@@ -51,7 +83,6 @@ window.addEventListener('load', () => {
         nombre.innerHTML = `${user.first_name} ${user.last_name} `
         avatar.src = user.avatar
         avatar.width = '160'
-        console.log(avatar)
 
         div_janet.appendChild(nombre)
         div_janet.appendChild(avatar)
